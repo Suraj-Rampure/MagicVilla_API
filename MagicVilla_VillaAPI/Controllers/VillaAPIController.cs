@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace MagicVilla_VillaAPI.Controllers
 {
@@ -143,13 +144,7 @@ namespace MagicVilla_VillaAPI.Controllers
                 return BadRequest();
             }
 
-            var villa = _db.Vilas.FirstOrDefault(u => u.Id == id);
-
-            if (villa == null)
-            {
-                return BadRequest();
-            }
-
+           // var villa = _db.Vilas.FirstOrDefault(u => u.Id == id);
             //villa.Name = villaDTO.Name;
             //villa.sqft = villaDTO.sqft;
             //villa.occupancy = villaDTO.occupancy;
@@ -183,7 +178,7 @@ namespace MagicVilla_VillaAPI.Controllers
                 return BadRequest();
             }
 
-            var villa = _db.Vilas.FirstOrDefault(u => u.Id == id);
+            var villa = _db.Vilas.AsNoTracking().FirstOrDefault(u => u.Id == id);
 
            
 
