@@ -54,7 +54,7 @@ namespace MagicVilla_VillaAPI.Controllers
             return _response;
         }
 
-        [HttpGet("id=int", Name = "GetVillaNumber")]
+        [HttpGet("{id=int}", Name = "GetVillaNumber")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -145,7 +145,7 @@ namespace MagicVilla_VillaAPI.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [HttpDelete("id:int", Name = "DeletevillaNumber")]
+        [HttpDelete("{id:int}", Name = "DeletevillaNumber")]
         public async Task<ActionResult<APIResponse>> DeletevillaNumber(int id)
         {
             try
@@ -181,14 +181,14 @@ namespace MagicVilla_VillaAPI.Controllers
 
 
 
-        [HttpPut("id:int", Name = "UpdateVillaNumber")]
+        [HttpPut("{id:int}", Name = "UpdateVillaNumber")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<APIResponse>> UpdateVillaNumber(int id, [FromBody] VillaNumberUpdateDTO updateDTO)
         {
             try
             {
-                if (updateDTO == null || id != updateDTO.VillaNo)
+                if (updateDTO == null)
                 {
                     return BadRequest();
                 }
