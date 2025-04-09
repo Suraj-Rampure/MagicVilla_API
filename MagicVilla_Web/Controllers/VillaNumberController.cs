@@ -74,6 +74,14 @@ namespace MagicVilla_Web.Controllers
                 {
                     return RedirectToAction(nameof(IndexVillaNumber));
                 }
+
+                else
+                {
+                  if(response.ErrorMessage.Count>0)
+                    {
+                        ModelState.AddModelError("ErrorMessage", response.ErrorMessage[0]);
+                    }
+                }
             }
 
 
