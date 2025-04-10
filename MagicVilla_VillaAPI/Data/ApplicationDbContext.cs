@@ -11,6 +11,7 @@ namespace MagicVilla_VillaAPI.Data
             
         }
 
+        public DbSet<LocalUser> LocalUsers { get; set; }
         public DbSet<Villa> Vilas { get; set; }
         public DbSet<VillaNumber> VilaNumbers { get; set; }
 
