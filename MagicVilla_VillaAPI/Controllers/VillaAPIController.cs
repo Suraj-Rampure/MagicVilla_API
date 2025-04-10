@@ -140,7 +140,7 @@ namespace MagicVilla_VillaAPI.Controllers
                 _response.StatusCode = HttpStatusCode.Created;
                 return Ok(_response);
 
-                return CreatedAtRoute("GetVilla", new { id = villa.Id }, _response);
+                //return CreatedAtRoute("GetVilla", new { id = villa.Id }, _response);
             }
 
             catch (Exception ex)
