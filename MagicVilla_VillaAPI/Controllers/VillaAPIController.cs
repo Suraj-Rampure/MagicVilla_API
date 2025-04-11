@@ -44,7 +44,7 @@ namespace MagicVilla_VillaAPI.Controllers
             catch (Exception ex)
             {
                 _response.IsSuccess = false;
-                _response.ErrorMessage = new List<string>() { ex.ToString() };
+                _response.ErrorMessages = new List<string>() { ex.ToString() };
 
             }
 
@@ -81,7 +81,7 @@ namespace MagicVilla_VillaAPI.Controllers
             catch (Exception ex)
             {
                 _response.IsSuccess = false;
-                _response.ErrorMessage = new List<string>() { ex.ToString() };
+                _response.ErrorMessages = new List<string>() { ex.ToString() };
 
             }
             return (_response);
@@ -146,7 +146,7 @@ namespace MagicVilla_VillaAPI.Controllers
             catch (Exception ex)
             {
                 _response.IsSuccess = false;
-                _response.ErrorMessage = new List<string>() { ex.ToString()
+                _response.ErrorMessages = new List<string>() { ex.ToString()
     };
 
             }
@@ -185,7 +185,7 @@ namespace MagicVilla_VillaAPI.Controllers
             catch (Exception ex)
             {
                 _response.IsSuccess = false;
-                _response.ErrorMessage = new List<string>() { ex.ToString()
+                _response.ErrorMessages = new List<string>() { ex.ToString()
     };
 
             }
@@ -237,7 +237,7 @@ namespace MagicVilla_VillaAPI.Controllers
             catch (Exception ex)
             {
                 _response.IsSuccess = false;
-                _response.ErrorMessage = new List<string>() { ex.ToString()
+                _response.ErrorMessages = new List<string>() { ex.ToString()
     };
 
             }
