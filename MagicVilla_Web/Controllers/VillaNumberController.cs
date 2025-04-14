@@ -4,6 +4,7 @@ using MagicVilla_Web.Models.DTO;
 using MagicVilla_Web.Models.VM;
 using MagicVilla_Web.Services;
 using MagicVilla_Web.Services.IServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
@@ -40,6 +41,7 @@ namespace MagicVilla_Web.Controllers
             return View(list);
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> CreateVillaNumber()
         {
@@ -62,6 +64,7 @@ namespace MagicVilla_Web.Controllers
             return View(villaNumberVM);
         }
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateVillaNumber(VillaNumberCreateVM model)
@@ -101,6 +104,7 @@ namespace MagicVilla_Web.Controllers
           
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> UpdateVillaNumber(int villaNo)
         {
@@ -130,6 +134,7 @@ namespace MagicVilla_Web.Controllers
             return NotFound();
         }
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> UpdateVillaNumber(VillaNumberUpdateVM model)
